@@ -1,9 +1,7 @@
 package Phone;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
+import java.util.function.Predicate;
 
 public class Search {
 
@@ -27,17 +25,17 @@ public class Search {
     }
 
     public static <S> boolean searchDouble(Set<S> collect) {
-        int count= 0;
+        int count = 0;
         for (S s : collect) {
             for (S s1 : collect) {
                 if (s.equals(s1)) {
-                   count++;
-                   if (count>1){
-                       return true;
-                   }
+                    count++;
+                    if (count > 1) {
+                        return true;
+                    }
                 }
             }
-            count =0;
+            count = 0;
         }
         return false;
     }
