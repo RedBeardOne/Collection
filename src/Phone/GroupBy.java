@@ -18,10 +18,4 @@ public class GroupBy {
         return matches;
     }
 
-    public static <S, T>Map<S, T> makeMap(List<T> collect){
-        Map<S, T> mapa = new HashMap<>();
-        for (T t : collect) {
-            
-        }
-    }
 }

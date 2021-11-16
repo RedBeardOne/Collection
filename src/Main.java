@@ -35,12 +35,7 @@ public class Main {
         Message fivemess = new Message("099 555 34 57", "five");
 
         List<Contact> contacts = new ArrayList<>();
-        contacts.add(Vasya);
-        contacts.add(Serhiy);
-        contacts.add(Anri);
-        contacts.add(Jack);
-        contacts.add(Zack);
-        contacts.add(Anya);
+        contacts.add(Vasya);contacts.add(Serhiy);contacts.add(Anri);contacts.add(Jack);contacts.add(Zack);contacts.add(Anya);
 
         List<Callog> callogs = new ArrayList<>();
         callogs.add(firz);
@@ -100,6 +95,14 @@ public class Main {
             });
             logCalls.put(nunber, callsLog);
         }
+        for (String s : bookPhoneCall.keySet()) {
+            Contact contact = bookPhoneCall.get(s);
+            List<Callog>historyCall= logCalls.get(s);
+            System.out.println("History of calls by "+contact.getName() + ":" );
+            for (Callog callog : historyCall) {
+                System.out.println( "Date of call "+callog.getDateCall()+", time of call " + callog.getTime());
+            }
+        }
         /* task 12.10.2021
          */
         Map<Contact, Integer> res = new HashMap<>();
@@ -114,7 +117,5 @@ public class Main {
             Integer n = finded.size();
             res.put(contact, n);
         }
-
-
     }
 }
